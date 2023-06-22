@@ -119,6 +119,9 @@ end
 
 script.on_event({ defines.events.on_lua_shortcut, "LR-toggle-life-raft" },
     function(event)
+
+        if event.prototype_name and event.prototype_name ~= "LR-toggle-life-raft" then return end
+
         local player = game.get_player(event.player_index) -- get the player that moved
 
         if player.vehicle then
